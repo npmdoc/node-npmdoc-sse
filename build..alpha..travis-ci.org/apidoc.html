@@ -1,0 +1,336 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/einaros/sse.js"
+
+    >sse (v0.0.6)</a>
+</h1>
+<h4>The HTML5 Server-Sent events specification is introduced "to enable servers to push data to Web pages over HTTP or using dedicated server-push protocols".</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sse">module sse</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sse.Client">
+            function <span class="apidocSignatureSpan">sse.</span>Client
+            <span class="apidocSignatureSpan">(req, res)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sse.super_">
+            function <span class="apidocSignatureSpan">sse.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sse.</span>Client.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sse.Client">module sse.Client</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sse.Client.Client">
+            function <span class="apidocSignatureSpan">sse.</span>Client
+            <span class="apidocSignatureSpan">(req, res)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sse.Client.super_">
+            function <span class="apidocSignatureSpan">sse.Client.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sse.Client.prototype">module sse.Client.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sse.Client.prototype.close">
+            function <span class="apidocSignatureSpan">sse.Client.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sse.Client.prototype.initialize">
+            function <span class="apidocSignatureSpan">sse.Client.prototype.</span>initialize
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sse.Client.prototype.send">
+            function <span class="apidocSignatureSpan">sse.Client.prototype.</span>send
+            <span class="apidocSignatureSpan">(event, data, id)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sse" id="apidoc.module.sse">module sse</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sse.Client" id="apidoc.element.sse.Client">
+        function <span class="apidocSignatureSpan">sse.</span>Client
+        <span class="apidocSignatureSpan">(req, res)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SSEClient(req, res) {
+  this.req = req;
+  this.res = res;
+  var self = this;
+  res.on(&#x27;close&#x27;, function() {
+    self.emit(&#x27;close&#x27;);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sse.super_" id="apidoc.element.sse.super_">
+        function <span class="apidocSignatureSpan">sse.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sse.Client" id="apidoc.module.sse.Client">module sse.Client</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sse.Client.Client" id="apidoc.element.sse.Client.Client">
+        function <span class="apidocSignatureSpan">sse.</span>Client
+        <span class="apidocSignatureSpan">(req, res)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SSEClient(req, res) {
+  this.req = req;
+  this.res = res;
+  var self = this;
+  res.on(&#x27;close&#x27;, function() {
+    self.emit(&#x27;close&#x27;);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sse.Client.super_" id="apidoc.element.sse.Client.super_">
+        function <span class="apidocSignatureSpan">sse.Client.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sse.Client.prototype" id="apidoc.module.sse.Client.prototype">module sse.Client.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sse.Client.prototype.close" id="apidoc.element.sse.Client.prototype.close">
+        function <span class="apidocSignatureSpan">sse.Client.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function () {
+  this.res.end();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sse.Client.prototype.initialize" id="apidoc.element.sse.Client.prototype.initialize">
+        function <span class="apidocSignatureSpan">sse.Client.prototype.</span>initialize
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">initialize = function () {
+  this.req.socket.setNoDelay(true);
+  this.res.writeHead(200, {
+    &#x27;Content-Type&#x27;: &#x27;text/event-stream&#x27;,
+    &#x27;Cache-Control&#x27;: &#x27;no-cache&#x27;,
+    &#x27;Connection&#x27;: &#x27;keep-alive&#x27;
+  });
+  this.res.write(&#x27;:ok\n\n&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sse.Client.prototype.send" id="apidoc.element.sse.Client.prototype.send">
+        function <span class="apidocSignatureSpan">sse.Client.prototype.</span>send
+        <span class="apidocSignatureSpan">(event, data, id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">send = function (event, data, id) {
+  if (arguments.length === 0) return;
+
+  var senderObject = {
+    event : event || undefined,
+    data  : data || undefined,
+    id    : id || undefined,
+    retry : undefined
+  };
+
+  if (typeof event == &#x27;object&#x27;) {
+    senderObject.event   = event.event || undefined,
+    senderObject.data    = event.data || undefined,
+    senderObject.id      = event.id || undefined,
+    senderObject.retry   = event.retry || undefined
+  }
+
+  if (typeof event != &#x27;object&#x27; &#x26;&#x26; arguments.length === 1) {
+    senderObject.event   = undefined;
+    senderObject.data    = event;
+  }
+
+  if (senderObject.event) this.res.write(&#x27;event: &#x27; + senderObject.event + &#x27;\n&#x27;);
+  if (senderObject.retry) this.res.write(&#x27;retry: &#x27; + senderObject.retry + &#x27;\n&#x27;);
+  if (senderObject.id) this.res.write(&#x27;id: &#x27; + senderObject.id + &#x27;\n&#x27;);
+
+  senderObject.data = senderObject.data.replace(/(\r\n|\r|\n)/g, &#x27;\n&#x27;);
+  var dataLines = senderObject.data.split(/\n/);
+
+  for (var i = 0, l = dataLines.length; i &#x3c; l; ++i) {
+    var line = dataLines[i];
+    if ((i+1) === l) this.res.write(&#x27;data: &#x27; + line + &#x27;\n\n&#x27;);
+    else this.res.write(&#x27;data: &#x27; + line + &#x27;\n&#x27;);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  res.writeHead(200, {&#x27;Content-Type&#x27;: &#x27;text/plain&#x27;});
+  res.end(&#x27;okay&#x27;);
+});
+
+server.listen(8080, &#x27;127.0.0.1&#x27;, function() {
+  var sse = new SSE(server);
+  sse.on(&#x27;connection&#x27;, function(client) {
+    client.<span class="apidocCodeKeywordSpan">send</span>(&#x27;hi there!&#x27;);
+  });
+});
+```
+
+Client code for the above server:
+
+```js
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
