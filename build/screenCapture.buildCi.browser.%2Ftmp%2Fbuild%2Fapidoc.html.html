@@ -56,6 +56,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.sse.sse">
+            function <span class="apidocSignatureSpan"></span>sse
+            <span class="apidocSignatureSpan">(httpServer, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.sse.Client">
             function <span class="apidocSignatureSpan">sse.</span>Client
             <span class="apidocSignatureSpan">(req, res)</span>
@@ -75,6 +84,12 @@
         <li>
 
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sse.</span>Client.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">sse.</span>sse.prototype</span>
 
         </li>
 
@@ -133,10 +148,87 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.sse.sse">module sse.sse</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sse.sse.sse">
+            function <span class="apidocSignatureSpan">sse.</span>sse
+            <span class="apidocSignatureSpan">(httpServer, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sse.sse.Client">
+            function <span class="apidocSignatureSpan">sse.sse.</span>Client
+            <span class="apidocSignatureSpan">(req, res)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sse.sse.super_">
+            function <span class="apidocSignatureSpan">sse.sse.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.sse.sse.prototype">module sse.sse.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.sse.sse.prototype.handleRequest">
+            function <span class="apidocSignatureSpan">sse.sse.prototype.</span>handleRequest
+            <span class="apidocSignatureSpan">(req, res, query)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.sse" id="apidoc.module.sse">module sse</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sse.sse" id="apidoc.element.sse.sse">
+        function <span class="apidocSignatureSpan"></span>sse
+        <span class="apidocSignatureSpan">(httpServer, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SSE(httpServer, options) {
+  options = new Options({
+    path          : '/sse',
+    verifyRequest : null
+  }).merge(options);
+  this.server = httpServer;
+  var oldListeners = this.server.listeners('request');
+  this.server.removeAllListeners('request');
+  var self = this;
+  this.server.on('request', function(req, res) {
+    var u = url.parse(req.url);
+    if (u.pathname == options.value.path &amp;&amp; (options.value.verifyRequest == null || options.value.verifyRequest(req))) {
+      self.handleRequest(req, res, u.query);
+    }
+    else {
+      for (var i = 0, l = oldListeners.length; i &lt; l; ++i) {
+        oldListeners[i].call(self.server, req, res);
+      }
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
@@ -171,6 +263,8 @@
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
+
+
 
 
 
@@ -316,6 +410,101 @@ Client code for the above server:
 
 ```js
 ...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sse.sse" id="apidoc.module.sse.sse">module sse.sse</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sse.sse.sse" id="apidoc.element.sse.sse.sse">
+        function <span class="apidocSignatureSpan">sse.</span>sse
+        <span class="apidocSignatureSpan">(httpServer, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SSE(httpServer, options) {
+  options = new Options({
+    path          : '/sse',
+    verifyRequest : null
+  }).merge(options);
+  this.server = httpServer;
+  var oldListeners = this.server.listeners('request');
+  this.server.removeAllListeners('request');
+  var self = this;
+  this.server.on('request', function(req, res) {
+    var u = url.parse(req.url);
+    if (u.pathname == options.value.path &amp;&amp; (options.value.verifyRequest == null || options.value.verifyRequest(req))) {
+      self.handleRequest(req, res, u.query);
+    }
+    else {
+      for (var i = 0, l = oldListeners.length; i &lt; l; ++i) {
+        oldListeners[i].call(self.server, req, res);
+      }
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sse.sse.Client" id="apidoc.element.sse.sse.Client">
+        function <span class="apidocSignatureSpan">sse.sse.</span>Client
+        <span class="apidocSignatureSpan">(req, res)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SSEClient(req, res) {
+  this.req = req;
+  this.res = res;
+  var self = this;
+  res.on('close', function() {
+    self.emit('close');
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.sse.sse.super_" id="apidoc.element.sse.sse.super_">
+        function <span class="apidocSignatureSpan">sse.sse.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.sse.sse.prototype" id="apidoc.module.sse.sse.prototype">module sse.sse.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.sse.sse.prototype.handleRequest" id="apidoc.element.sse.sse.prototype.handleRequest">
+        function <span class="apidocSignatureSpan">sse.sse.prototype.</span>handleRequest
+        <span class="apidocSignatureSpan">(req, res, query)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleRequest = function (req, res, query) {
+  var client = new SSEClient(req, res);
+  client.initialize();
+  this.emit('connection', client, querystring.parse(query));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
